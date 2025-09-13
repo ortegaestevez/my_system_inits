@@ -117,6 +117,14 @@ else
     log_error "Failed to install Brave browser"
 fi
 
+# Install Xodo PDF Reader
+log_info "Installing Xodo PDF Reader"
+if curl -fsS https://getpdfstudio.xodo.com/xodopdfstudio/XodoPDFStudio_linux64.sh | sh; then
+    log_success "Xodo PDF Reader installed successfully"
+else
+    log_error "Failed to install Xodo PDF Reader"
+fi
+
 # Install snap applications if not already installed
 log_info "Installing snap applications: ${snap_apps[*]}"
 for app in "${snap_apps[@]}"; do
